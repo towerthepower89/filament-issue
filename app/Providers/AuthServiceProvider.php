@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Policies\TypePolicy;
 // use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -14,6 +15,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         //
+        Type::class => TypePolicy::class,
     ];
 
     /**
@@ -22,5 +24,7 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        use App\Policies\WorkPolicy;
     }
 }
+
