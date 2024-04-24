@@ -24,7 +24,7 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
-        use App\Policies\WorkPolicy;
+        $this->registerPolicies();
     }
 }
 
